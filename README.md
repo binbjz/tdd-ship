@@ -1,4 +1,4 @@
-Unit Test in java
+Unit Test
 ===========================
 
 Moves a ship around Earth seas. Earth is represented as a grid.
