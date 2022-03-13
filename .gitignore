@@ -1,0 +1,9 @@
+.DS_Store
+.gradle
+.idea
+bin
+build
+coverage
+gradle
+gradlew*
+*.iml
