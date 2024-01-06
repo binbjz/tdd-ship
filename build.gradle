@@ -8,11 +8,32 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36'
-    testImplementation 'org.testng:testng:7.5'
+    implementation group: "org.slf4j", name: "slf4j-log4j12", version: "2.0.9"
+    testImplementation "org.testng:testng:7.8.0"
 }
 
 test {
-    useTestNG()
+    ignoreFailures = true
+    reports.html.required = true
+
+    useTestNG() {
+        useDefaultListeners = true
+    }
+
+    testLogging {
+        showStandardStreams = true
+        exceptionFormat = "full"
+    }
 }
 
+tasks.register("jacocoTestReportBin", JacocoReport) {
+    dependsOn "test"
+
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+    sourceDirectories.setFrom(files(sourceSets.main.allJava.srcDirs))
+    classDirectories.setFrom(files(sourceSets.main.output))
+    executionData.setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
+}
