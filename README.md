@@ -18,3 +18,15 @@ Meet the following requirements:
 - Not the whole planet consists of seas. Roughly 30% is surface are islands and continents. Implement surface detection before each move to a new position.
 
 This is a simple and complete program. It will show you how to write a good unit test.
+
+How to run it：
+--
+- Run tests and generate a test report.
+```sh
+$ ./gradlew clean test
+```
+or
+- Run tests and generate both test and coverage reports.
+```sh
+$ ./gradlew clean test jacocoTestReportBin
+```
