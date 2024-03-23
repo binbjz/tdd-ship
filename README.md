@@ -21,12 +21,15 @@ This is a simple and complete program. It will show you how to write a good unit
 
 How to run it：
 --
-- Run tests and generate a test report.
+- Run tests and generate a test report (./build/reports/tests/test/index.html).
 ```sh
 $ ./gradlew clean test
 ```
 or
-- Run tests and generate both test and coverage reports.
+- Run tests and generate both test and coverage reports (./build/reports/jacoco/jacocoTestReportBin/html/index.html).
 ```sh
 $ ./gradlew clean test jacocoTestReportBin
 ```
+
+
+
